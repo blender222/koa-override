@@ -14,9 +14,9 @@ module.exports = options => {
 
     let method;
     // body support
-    const body = ctx.request.body;
-    if (body && body._method) {
-      method = body._method.toUpperCase();
+    const query = ctx.request.query;
+    if (query && query._method) {
+      method = query._method.toUpperCase();
     } else {
       // header support
       const header = ctx.get('x-http-method-override');
